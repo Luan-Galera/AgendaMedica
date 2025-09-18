@@ -1,54 +1,59 @@
 ﻿@model IEnumerable<AgendaMedica.Models.Medico>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Cadastro de Médicos";
 }
 
-<h1>Index</h1>
+<div class="container">
+    <h1>Médicos</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CRM)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Celular)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Especialidade)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+    <h1 class="text-center display-5 mt-5">Cadastro de <span class="fw-bold">Médicos</span></h1>
+
+    <p>
+        <a asp-action="Create" class="btn btn-primary btn-lg w-25"><i class="bi bi-plus-circle"></i> Adicionar</a>
+    </p>
+
+    <table class="table table-striped table-bordered">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nome)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CRM)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Celular)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Especialidade.Nome)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.MedicoId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.MedicoId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.MedicoId">Delete</a>
-                </td>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CRM)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Celular)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Especialidade)
+                </th>
+                <th>Ações</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CRM)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Celular)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Especialidade.Nome)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.MedicoId" class="btn btn-info btn-outline-light"><i class="bi bi-pencil-square"></i> Editar</a> |
+                        <a asp-action="Details" asp-route-id="@item.MedicoId" class="btn btn-warning btn-outline-success"><i class="bi bi-list"></i> Detalhes</a> |
+                        <a asp-action="Delete" asp-route-id="@item.MedicoId" class="btn btn-danger btn-outline-dark"><i class="bi bi-x-circle"></i> Excluir</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -3,6 +3,39 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4 fw-bold">Bem-Vindo</h1>
+    <h3 class="mt-3">@User.Identity?.Name</h3>
+    <p class="mt-3">Nossa agenda médica é a solução completa para agendamento de consultas médicas!</p>
+</div>
+
+<div class="row text-center">
+    <div class="col-12 col-md-4 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <i class="bi bi-speedometer display-5 text-info"></i>
+                <h4 class="card-title">Praticidade</h4>
+                <p class="card-text">Agende consultas facilmente</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-4 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <i class="bi bi-card-checklist display-5 text-success"></i>
+                <h4 class="card-title">Organização</h4>
+                <p class="card-text">Organize suas consultas</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-4 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <i class="bi bi-stopwatch display-5 text-warning"></i>
+                <h4 class="card-title">Tempo</h4>
+                <p class="card-text">Agendamento Rápido</p>
+            </div>
+        </div>
+    </div>
 </div>
